@@ -80,6 +80,8 @@ public class Student {
 		setPersonCode(personCode);
 	};
 	//4. to String
-
+	public String toString() {
+		return "" + id + ": " + name + " " + surname + ", " + personCode + ", " + faculty;
+	}
 	//5. additional functions
 }
