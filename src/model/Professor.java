@@ -6,7 +6,7 @@ public class Professor {
 	private String name;
 	private String surname;
 	private Faculty faculty;
-	private String degree;
+	private Degree degree;
 	
 	private static long professorCounter = 0;
 	//2. getters setters
@@ -46,14 +46,35 @@ public class Professor {
 			faculty = Faculty.other;
 		}
 	}
-	public String getDegree() {
+	public Degree getDegree() {
 		return degree;
 	}
-	public void setDegree(String degree) {
-		this.degree = degree;
+	public void setDegree(Degree inputDegree) {
+		if(inputDegree != null) {
+			degree = inputDegree;
+		} else {
+			degree = Degree.other;
+		}
 	}
 	
 	//3. constructors
+	public Professor() {
+		setId();
+		setName("Unknown");
+		setSurname("Surname");
+		setFaculty(Faculty.other);
+		setDegree(Degree.other);
+	};
+	public Professor(String name, String surname, Faculty faculty, String personCode) {
+		setId();
+		setName(name);
+		setSurname(surname);
+		setFaculty(faculty);
+		setDegree(degree);
+	};
 	//4. to string
+	public String toString() {
+		return "" + id + ": " + name + " " + surname + ", " + ", " + faculty + ", " + degree;
+	}
 	//5. other functions
 }
