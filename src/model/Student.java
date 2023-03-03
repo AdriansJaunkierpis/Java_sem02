@@ -65,7 +65,20 @@ public class Student {
 	
 	
 	//3. constructors
-	
+	public Student() {
+		setId();
+		setName("Unknown");
+		setSurname("Surname");
+		setFaculty(Faculty.other);
+		setPersonCode("000000-00000");
+	};
+	public Student(String name, String surname, Faculty faculty, String personCode) {
+		setId();
+		setName(name);
+		setSurname(surname);
+		setFaculty(faculty);
+		setPersonCode(personCode);
+	};
 	//4. to String
 
 	//5. additional functions
