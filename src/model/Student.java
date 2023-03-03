@@ -33,14 +33,14 @@ public class Student {
 	
 	//TODO check out regex ([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+
 	public void setName(String name) {
-		if(name != null && name.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[ ]?([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+")) {
+		if(name != null && name.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[ ]?")) {
 			this.name = name;
 		} else {
 			this.name = "Unknown";
 		}
 	}
 	public void setSurname(String surname) {
-		if(surname != null && surname.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[-]?([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+")) {
+		if(surname != null && surname.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[ ]?")) {
 			this.surname = surname;
 		} else {
 			this.surname = "Unknown";
