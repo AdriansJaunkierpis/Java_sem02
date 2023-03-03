@@ -31,20 +31,30 @@ public class Student {
 	
 	//TODO check out regex ([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+
 	public void setName(String name) {
-		if(name.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+")) {
+		if(name.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[ ]?([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+")) {
 			this.name = name;
 		} else {
 			this.name = "Unknown";
 		}
 	}
 	public void setSurname(String surname) {
-		this.surname = surname;
+		if(surname.matches("([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+[-]?([A-ZĀČĒĢĪĶĻŅŠŪŽ]){1}[a-zāčēģīķļņšūž]+")) {
+			this.surname = surname;
+		} else {
+			this.surname = "Unknown";
+		}
 	}
 	public void setFaculty(Faculty faculty) {
 		this.faculty = faculty;
 	}
+	
+	//([0-9]{6}[-][0-9]{5})?(32{1}[0-9]{9})
 	public void setPersonCode(String personCode) {
-		this.personCode = personCode;
+		if (personCode.matches("([0-9]{6}[-][0-9]{5})")) {
+			this.personCode = personCode;
+		} else {
+			this.personCode = "Unknwon";
+		}
 	}
 	
 	
