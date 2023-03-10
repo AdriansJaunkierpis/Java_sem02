@@ -59,4 +59,8 @@ public class Grade {
 		setCourse(course);
 	};
 	
+	//toString
+	public String toString() {
+		return "" + id + ": " + student.getName() + " " + student.getSurname() + ", Grade: " + gradeValue + ", Course: " + course.getTitle();
+	}
 }
