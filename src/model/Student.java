@@ -68,7 +68,7 @@ public class Student {
 	public Student() {
 		setId();
 		setName("Unknown");
-		setSurname("Surname");
+		setSurname("Unknown");
 		setFaculty(Faculty.other);
 		setPersonCode("000000-00000");
 	};
