@@ -52,14 +52,26 @@ public class Course {
 		if (professor != null) {
 			this.professor = professor;
 		} else {
-			professor = new Professor();
+			this.professor = new Professor();
 		}
 	}
 	
-	
-	
 	//3 constructors
+	public Course() {
+		setId();
+		setTitle("Unknown");
+		setCreditPoints(2);
+		setType(CourseGradeType.other);
+		setProfessor(new Professor());
+	};
 	
+	public Course(String title, int creditPoints, CourseGradeType type, Professor professor) {
+		setId();
+		setTitle(title);
+		setCreditPoints(creditPoints);
+		setType(type);
+		setProfessor(professor);
+	};
 	//4 toString
 	
 	//5 additional functions
