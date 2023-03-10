@@ -74,7 +74,7 @@ public class Course {
 	};
 	//4 toString
 	public String toString() {
-		return "" + id + ": " + title + ", KP:" + creditPoints + ", " + ", " + type + ", Prof.: " + professor.getName() + " " + professor.getSurname();
+		return "" + id + ": " + title + ", KP:" + creditPoints + ", " + type + ", Prof.: " + professor.getName() + " " + professor.getSurname();
 	}
 	//5 additional functions
 }
