@@ -113,4 +113,20 @@ public class MainService {
 			return 0;
 		}
 	}
+	
+	private static float calculateWeightedAVGGrade(Student student) {
+		if (student != null) {
+			float gradesSum = 0;
+			int cpCount = 0;
+			for (Grade temp : allGradesList) {
+				if (temp.getStudent().equals(student)) {
+					gradesSum += (temp.getGradeValue()*temp.getCourse().getCreditPoints());
+					cpCount += temp.getCourse().getCreditPoints();
+				}
+			}
+			return gradesSum / cpCount;
+		} else {
+			return 0;
+		}
+	}
 }
