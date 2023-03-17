@@ -86,6 +86,12 @@ public class MainService {
 		for(Professor temp : allProfessorsList) {
 			System.out.println(temp.getName() + ": " + calculateProfCourses(temp));
 		}
+		
+		ArrayList<Student> sortedAllStudentList = sortStudent();
+		System.out.println("-----------------------------------------sorted \\/");
+		for(Student temp : sortedAllStudentList) {
+			System.out.println(temp);
+		}
 	}
 	private static float calculateAVGGrade(Student student) {
 		if (student != null) {
@@ -150,5 +156,25 @@ public class MainService {
 		} else {
 			return 0;
 		}
+	}
+	
+	private static ArrayList<Student> sortStudent() {
+		ArrayList<Student> sortedStudents = new ArrayList<>();
+		
+		for (Student temp : allStudentsList) {
+			sortedStudents.add(temp);
+		}
+		for (int i = 0; i < sortedStudents.size(); i++) {
+			for (int j = 0; i < sortedStudents.size(); j++) {
+				float student1AVGGrade = calculateAVGGrade(sortedStudents.get(i));
+				float student2AVGGrade = calculateAVGGrade(sortedStudents.get(j));
+				if (student1AVGGrade > student2AVGGrade) {
+					Student temp = sortedStudents.get(i);
+					sortedStudents.set(i, sortedStudents.get(j));
+					sortedStudents.set(j, temp);
+				}
+			}
+		}
+		return sortedStudents;
 	}
 }
