@@ -69,14 +69,22 @@ public class MainService {
 			System.out.println(temp);
 		}
 		
-		System.out.println("----------------------------");
+		System.out.println("---------------------------- student avg grade");
 		
 		for (Student temp : allStudentsList) {
 			System.out.println(temp.getName() + ": " + calculateAVGGrade(temp));
 		}
-		System.out.println("----------------------------");
+		System.out.println("---------------------------- course avg grade");
 		for (Course temp : allCoursesList) {
 			System.out.println(temp.getTitle() + ": " + calculateCourseAVGGrade(temp));
+		}
+		System.out.println("-----------------------------------------weighted grade \\/");
+		for(Student temp : allStudentsList) {
+			System.out.println(temp.getName() + ": " + calculateWeightedAVGGrade(temp));
+		}
+		System.out.println("-----------------------------------------profCourseCount \\/");
+		for(Professor temp : allProfessorsList) {
+			System.out.println(temp.getName() + ": " + calculateProfCourses(temp));
 		}
 	}
 	private static float calculateAVGGrade(Student student) {
@@ -125,6 +133,20 @@ public class MainService {
 				}
 			}
 			return gradesSum / cpCount;
+		} else {
+			return 0;
+		}
+	}
+	
+	private static int calculateProfCourses(Professor professor) {
+		if (professor != null) {
+			int courseCount = 0;
+			for (Course temp : allCoursesList) {
+				if (temp.getProfessor().equals(professor)) {
+					courseCount++;
+				}
+			}
+			return courseCount;
 		} else {
 			return 0;
 		}
